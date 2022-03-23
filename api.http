@@ -1,0 +1,25 @@
+GET http://127.0.0.1/5000 HTTP/1.1
+content-type: application/json
+
+###
+
+GET https://localhost:3000/
+
+
+###
+
+GET https://localhost:5000/
+###
+
+GET https://example.com/topics/1 HTTP/1.1
+
+###
+
+POST https://example.com/comments HTTP/1.1
+content-type: application/json
+Authorization: token xxx
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}

@@ -1,0 +1,27 @@
+
+GET http://localhost:5000/
+
+###
+
+POST http://localhost:5000/api/users
+content-type: application/json
+
+{
+  "name": "User 01",
+  "email": "user01@gmail.com",
+  "password": "test123"
+}
+
+###
+
+POST http://localhost:5000/api/users/login
+content-type: application/json
+
+{
+  "email": "user01@gmail.com",
+  "password": "test123"
+}
+
+###
+GET  http://localhost:5000/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2I2YWM1YzRhNzViYTEwZjY3ZGQ5OCIsImlhdCI6MTY0ODA3NTUwNCwiZXhwIjoxNjQ4MDgyNzA0fQ.feAw0LjxipzpKlw4HY9pekyJ2QNDiAqVbuiAag0id1g
