@@ -2,6 +2,7 @@ import 'dotenv/config'
 import express from 'express'
 import colors from "colors"
 import userRouter from "./routes/userRoutes.js"
+import ticketRouter from "./routes/ticketRoutes.js"
 import {errorHandler} from "./middlewares/errorMiddleware.js"
 import connectDB from "./config/db.js"
  
@@ -14,6 +15,7 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use("/api/users", userRouter)
+app.use("/api/tickets", ticketRouter)
 app.use(errorHandler)
 
 // respond with "hello world" when a GET request is made to the homepage
