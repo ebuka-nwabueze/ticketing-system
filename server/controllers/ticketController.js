@@ -12,12 +12,40 @@ export const getTickets = asyncHandler(async (req, res) => {
   const user = await User.findById(id)
 
   if(!user){
-    res.status(401)
+    res.status(401) 
     throw new Error("Not Authorized")
   }
 
   const tickets = await Ticket.find({user: id})
   res.status(200).json(tickets)
+})
+
+// @desc    Create new ticket
+// @route   POST /api/tickets/
+// @access  Private
+export const createTicket = asyncHandler(async (req, res) => {
+  const {id} = req.user
+  const user = await User.findById(id)
+  const {product, description} = req.body
+
+  if(!user){
+    res.status(401)
+    throw new Error("Not Authorized")
+  }
+
+  if(!product || !description){
+    res.status(400)
+    throw new Error("Please add a product and description")
+  }
+
+  const ticket = await Ticket.create({
+    user: id,
+    product,
+    description,
+    status: "new"
+  })
+  
+  res.status(201).json(ticket)
 })
 
 // @desc    Get a single ticket
@@ -108,30 +136,3 @@ export const updateTicket = asyncHandler(async (req, res) => {
 
 
 
-// @desc    Create new ticket
-// @route   POST /api/tickets/new
-// @access  Private
-export const createTicket = asyncHandler(async (req, res) => {
-  const {id} = req.user
-  const user = await User.findById(id)
-  const {product, description} = req.body
-
-  if(!user){
-    res.status(401)
-    throw new Error("Not Authorized")
-  }
-
-  if(!product || !description){
-    res.status(400)
-    throw new Error("Please add a product and description")
-  }
-
-  const ticket = await Ticket.create({
-    user: id,
-    product,
-    description,
-    status: "new"
-  })
-  
-  res.status(201).json(ticket)
-})
