@@ -40,8 +40,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2I2YWM1Y
 ###
 
 GET http://localhost:5000/api/tickets
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDBjMWUwODBhNjVhOTc1YTBlYTY2OSIsImlhdCI6MTY0ODUwMDgzNSwiZXhwIjoxNjQ4NTA4MDM1fQ.YI6UodYGUIlyDsw1d-XHvWm6hnLnFf-U6sKbGbX9j2g
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDBjMWUwODBhNjVhOTc1YTBlYTY2OSIsImlhdCI6MTY0ODY1MTE5MywiZXhwIjoxNjQ4ODIzOTkzfQ.PYbo6S8-4bghAeujWj_OBJEITeUoj2UvPhFxrtcUGIU
 ###
 
 
@@ -55,5 +54,22 @@ content-type: application/json
 
 ###
 
-tunde eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDBjMWUwODBhNjVhOTc1YTBlYTY2OSIsImlhdCI6MTY0ODUwMDgzNSwiZXhwIjoxNjQ4NTA4MDM1fQ.YI6UodYGUIlyDsw1d-XHvWm6hnLnFf-U6sKbGbX9j2g
+tunde eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDBjMWUwODBhNjVhOTc1YTBlYTY2OSIsImlhdCI6MTY0ODY1MTE5MywiZXhwIjoxNjQ4ODIzOTkzfQ.PYbo6S8-4bghAeujWj_OBJEITeUoj2UvPhFxrtcUGIU
 user01 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2I2YWM1YzRhNzViYTEwZjY3ZGQ5OCIsImlhdCI6MTY0ODQ5OTU5NywiZXhwIjoxNjQ4NTA2Nzk3fQ.nvjKPKxzrw1Lmqwi6yDSgcDQWBHQZQBVz14E8-xCjog
+###
+
+GET http://localhost:5000/api/tickets/624315eb3a14308f1d7f6870/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDBjMWUwODBhNjVhOTc1YTBlYTY2OSIsImlhdCI6MTY0ODY1MTE5MywiZXhwIjoxNjQ4ODIzOTkzfQ.PYbo6S8-4bghAeujWj_OBJEITeUoj2UvPhFxrtcUGIU
+
+###
+
+
+POST http://localhost:5000/api/tickets/624315eb3a14308f1d7f6870/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDBjMWUwODBhNjVhOTc1YTBlYTY2OSIsImlhdCI6MTY0ODY1MTE5MywiZXhwIjoxNjQ4ODIzOTkzfQ.PYbo6S8-4bghAeujWj_OBJEITeUoj2UvPhFxrtcUGIU
+content-type: application/json
+
+{
+  "text": "Could you treat as urgent"
+}
+
+

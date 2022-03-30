@@ -23,6 +23,7 @@ export const fetchTickets = async (token) => {
 
 }
 
+// Fetch Single Ticket
 export const fetchTicket = async (ticketId, token) => {
   const config = {
     headers: {
@@ -30,6 +31,18 @@ export const fetchTicket = async (ticketId, token) => {
     }
   }
   const response = await axios.get(`${API_URL}/${ticketId}`, config)
+  return response.data
+
+}
+
+// Close Ticket
+export const closeTicket = async (ticketId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  const response = await axios.put(`${API_URL}/${ticketId}`,{status: "closed"}, config)
   return response.data
 
 }
