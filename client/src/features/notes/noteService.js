@@ -14,3 +14,15 @@ export const fetchNotes = async (ticketId, token) => {
   return response.data
 
 }
+
+// Submit notes
+export const submitNotes = async (noteText,ticketId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  const response = await axios.post(`${API_URL}/${ticketId}/notes`, {text: noteText}, config)
+  return response.data
+
+}

@@ -9,6 +9,7 @@ import NoteItem from "../components/NoteItem";
 import { getTicket, ticketClose } from "../features/tickets/ticketSlice";
 import { getNotes } from "../features/notes/noteSlice";
 import { FaPlus, FaWindowClose } from "react-icons/fa";
+import { addNotes } from "../features/notes/noteSlice";
 
 const customStyles = {
   content: {
@@ -51,7 +52,7 @@ function Ticket() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
+    dispatch(addNotes({noteText,ticketId}))
     closeModal()
   };
 
