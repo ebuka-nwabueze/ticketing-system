@@ -11,7 +11,10 @@ The application is built using MongoDB, Express, REACT and NodeJS.
 
 1) Ensure you have node installed, then
 
--   ### `npm install`
+
+-   ### In the root folder run `npm install`
+-   ### change to the client directory and also run `npm install`
+
 
 2) Create a .env file with the following variables:
 
