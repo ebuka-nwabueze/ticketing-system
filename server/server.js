@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import path from "path";
+import {fileURLToPath} from 'url';
 import colors from "colors";
 import userRouter from "./routes/userRoutes.js";
 import ticketRouter from "./routes/ticketRoutes.js";
@@ -20,6 +21,9 @@ app.use("/api/tickets", ticketRouter);
 app.use(errorHandler);
 
 
+// Getting the __dirname the ES Module method
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 // Serve front end
