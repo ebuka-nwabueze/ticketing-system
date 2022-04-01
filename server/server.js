@@ -19,11 +19,8 @@ app.use("/api/users", userRouter);
 app.use("/api/tickets", ticketRouter);
 app.use(errorHandler);
 
-// respond with "hello world" when a GET request is made to the homepage
 
-app.listen(PORT, () => {
-  return console.log(`Server listening on port ${PORT}`);
-});
+
 
 // Serve front end
 
@@ -36,6 +33,11 @@ if (process.env.NODE_ENV === "production") {
   );
 } else {
   app.get("/", (req, res) => {
+    // respond with "Welcome...." when a GET request is made to the homepage
     res.status(200).json({ message: "Welcome to Support Desk App" });
   });
 }
+
+app.listen(PORT, () => {
+  return console.log(`Server listening on port ${PORT}`);
+});
